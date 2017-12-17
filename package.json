@@ -1,10 +1,7 @@
 {
-  "name": "heroku-cra-node",
+	"name": "study_spaces",
   "version": "1.0.0",
-  "description": "How to use create-react-app with a custom Node API on Heroku",
-  "engines": {
-    "node": "6.11.x"
-  },
+  "description": "Best places to study on UIUC campus",
   "scripts": {
     "start": "node server",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
