@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import {
   Button,
+	Card,
+	Grid,
+	Header,
   Image,
   Input,
-  Grid,
-  Card,
-  Header
+	Item,
+  List
  }
 from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import NavBar from '../NavBar/NavBar.jsx';
 import axios from 'axios';
+
+import NavBar from '../NavBar/NavBar.jsx';
 import './Home.css';
 import knifeforkImg from '../../assets/knifefork.png'
+import locationIcon from '../../assets/locationIcon.png'
 
 class Home extends Component {
   constructor(props){
@@ -81,40 +85,35 @@ class Home extends Component {
       // }
 
 			return (
-				<Grid.Column key={place.id}>
-					<Card>
-						<Image centered size="medium" value={place.id} key={place.id} src={knifeforkImg} />
-						<Card.Content>
-							<Card.Header>
-								<Link
-									to={{
-										pathname: "/location",
-										state: {
-											location: place.name,
-											address: place.formatted_address,
-											photo: place.photos
-										}
-									}}
-								>
-									{place.name}
-								</Link>
-							</Card.Header>
-							<Card.Description>
-								{place.formatted_address}
-							</Card.Description>
-						</Card.Content>
-					</Card>
+				<List.Item>
+					<Image size="small" src={locationIcon} />
+					<List.Content>
+						<List.Description></List.Description>
+						<List.Header>
+							<Link
+								to={{
+									pathname: "/location",
+									state: {
+										location: place.name,
+										address: place.formatted_address,
+										photo: place.photos
+									}
+								}}
+							>
+								{place.name}
+							</Link>
+						</List.Header>
+						{place.formatted_address}
+					</List.Content>
 					<br/>
-					<br/>
-
-				</Grid.Column>
+				</List.Item>
 			)
 		});
 
 		return (
-    	<div className="home-text">
-				<NavBar/>
-				<h1>Home Component</h1>
+			<div className="home-text">
+				<h1 id="header">StudySpaces</h1>
+				<h5>Looking for a place to do work? Find one here, and leave a review!</h5>
 				<Input
 					placeholder='i.e. Cafes in Champaign'
 					size='massive'
@@ -130,16 +129,11 @@ class Home extends Component {
 					Submit
 				</Button>
 				<br/>
-				<Header size='medium' color='teal' >Results</Header>
 				<br/>
-				<span>whitespace</span>
-				<Grid centered className="placeList" relaxed columns={4}>
-					<Grid.Row>
-						{results}
-					</Grid.Row>
-				</Grid>
+				<List relaxed celled verticalAlign="middle">
+					{results}
+				</List>
 			</div>
-
     )
   }
 }

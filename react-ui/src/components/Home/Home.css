@@ -1,10 +1,10 @@
-/*body {
-	text-align: center;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}*/
+body {
+  text-align: center
+}
+#header {
+  font-size: 4em;
+}
+
 .home-submit-btn {
   padding: 1em;
 }
@@ -13,4 +13,7 @@
 }
 .home-text {
   text-align: center;
+}
+#placeImage {
+    background-color: powderblue;
 }

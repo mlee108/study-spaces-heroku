@@ -44,7 +44,7 @@ class Profile extends Component {
         // let profileIcon = profileImg;//url("../../assets/" + charVal.toString() + ".png");
         apiCall = '/api/review?where={"email": "' + this.state.email + '"}';
         this.setState({
-          icon: images[charVal] //profileIcon
+          icon: images[charVal]
         })
       })
       .then ( (res) => {
@@ -79,13 +79,13 @@ class Profile extends Component {
             <Table.Cell singleLine><b>{review.location}</b></Table.Cell>
             <Table.Cell textAlign='center'>
               <List verticalAlign='middle'>
-                <List.Item>Quiet</List.Item>
+                <List.Item>Quietness</List.Item>
                 <Rating icon='star' defaultRating={review.rating1} maxRating={5} disabled/> <br/>
-                <List.Item>Wifi</List.Item>
+                <List.Item>Wi-Fi</List.Item>
                 <Rating icon='star' defaultRating={review.rating2} maxRating={5} disabled/> <br/>
-                <List.Item>Group</List.Item>
+                <List.Item>Food</List.Item>
                 <Rating icon='star' defaultRating={review.rating3} maxRating={5} disabled/> <br/>
-                <List.Item>Other</List.Item>
+                <List.Item>Open Late</List.Item>
                 <Rating icon='star' defaultRating={review.rating4} maxRating={5} disabled/> <br/>
               </List>
             </Table.Cell>
@@ -105,34 +105,27 @@ class Profile extends Component {
     }
 
     return (
-      <div className="ui container center aligned">
-          <Header color="black" size="huge" textAlign="center">
-            <Image src={this.state.icon} />
-            <h1>{this.state.email}</h1>
-          </Header>
-           <br/>
-             <Dropdown text='Filter' icon='filter' floating labeled button className='icon'>
-               <Dropdown.Menu>
-                 <Dropdown.Item>Rating</Dropdown.Item>
-                 <Dropdown.Item>Date Updated</Dropdown.Item>
-               </Dropdown.Menu>
-             </Dropdown>
+			<div className="ui container center aligned">
+				<Header color="black" size="huge" textAlign="center">
+					<Image src={this.state.icon} />
+					<h1>{this.state.email}</h1>
+				</Header>
+				<br/>
+				<Table celled padded color="teal" striped>
+					<Table.Header>
+						<Table.Row>
+							<Table.HeaderCell singleLine>Date</Table.HeaderCell>
+							<Table.HeaderCell>Location</Table.HeaderCell>
+							<Table.HeaderCell>Ratings</Table.HeaderCell>
+							<Table.HeaderCell>Reviews</Table.HeaderCell>
+						</Table.Row>
+					</Table.Header>
 
-           <Table celled padded color="teal" striped>
-             <Table.Header>
-               <Table.Row>
-                 <Table.HeaderCell singleLine>Date</Table.HeaderCell>
-                 <Table.HeaderCell>Location</Table.HeaderCell>
-                 <Table.HeaderCell>Ratings</Table.HeaderCell>
-                 <Table.HeaderCell>Reviews</Table.HeaderCell>
-               </Table.Row>
-             </Table.Header>
-
-             <Table.Body>
-               {output}
-             </Table.Body>
-           </Table>
-           <br/>
+					<Table.Body>
+						{output}
+					</Table.Body>
+				</Table>
+				<br/>
       </div>
     )
   }

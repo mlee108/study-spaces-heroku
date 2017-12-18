@@ -77,6 +77,7 @@ class Review extends Component {
     axios.get(apiCall)
     .then ( (res) => {
       console.log(res.data.data.length);
+
       if (res.data.data.length == 0) {
         // POST new review
         console.log("POSTING NEW REVIEW: ");
@@ -103,6 +104,7 @@ class Review extends Component {
         .then ( (res) => {
           console.log("post success");
           console.log(res);
+					alert("Thanks for your review!");
         })
         .catch ( (err) => {
           console.log("post error");
@@ -126,6 +128,7 @@ class Review extends Component {
         })
         .then ( (res) => {
           console.log("PUT success");
+					alert("Your review has been updated!");
         })
         .catch ( (err) => {
           console.log(err);
@@ -157,120 +160,128 @@ class Review extends Component {
         <h1>Reviewing {this.state.location}</h1>
         <h4>{this.state.address}</h4>
         <div className="ratings">
-        <div className="middle aligned grid">
-          <div className="ui items">
+					<div className="middle aligned grid">
+						<div className="ui items">
 
-            <div className="ui grid">
-              <div className="eight wide column">
-                <div className="ui items">
-                <div className="ui item">
-                  <div className="middle aligned content">
-                    <div className="header">
-                      <Popup
-                        trigger={<Button content='Quietness:' />}
-                        content='1 star: very loud 5 star: very quiet'
-                      />
-                    </div>
-                    <Rating
-                      className="ui star"
-                      defaultRating={3}
-                      maxRating={5}
-                      onRate={this.handleRating1}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+							<div className="ui grid">
+								<div className="eight wide column">
+									<div className="ui items">
+										<div className="ui item">
+											<div className="middle aligned content">
+												<div className="header">
+													<Popup
+														trigger={<Button content='Quietness:' />}
+														content='1 star: very loud 5 star: very quiet'
+													/>
+												</div>
+												<Rating
+													className="ui star"
+													defaultRating={3}
+													maxRating={5}
+													onRate={this.handleRating1}
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
 
-              <div className="eight wide column">
-                <div className="ui items">
-                  <div className="ui item">
-                    <div className="middle aligned content">
-                      <div className="header">
-                        <Popup
-                          trigger={<Button content='Wi-Fi Strength:' />}
-                          content='1 star: no wi-fi 5 star: great wi-fi'
-                        />
-                      </div>
-                      <Rating
-                        className="ui star"
-                        defaultRating={3}
-                        maxRating={5}
-                        onRate={this.handleRating2}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+								<div className="eight wide column">
+									<div className="ui items">
+										<div className="ui item">
+											<div className="middle aligned content">
+												<div className="header">
+													<Popup
+														trigger={<Button content='Wi-Fi Strength:' />}
+														content='1 star: no wi-fi 5 star: great wi-fi'
+													/>
+												</div>
+												<Rating
+													className="ui star"
+													defaultRating={3}
+													maxRating={5}
+													onRate={this.handleRating2}
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
 
-            </div>
+							</div>
 
 
-            <div className="ui grid">
-              <div className="eight wide column">
-                <div className="ui items">
-                  <div className="ui item">
-                    <div className="middle aligned content">
-                      <div className="header">
-                        <Popup
-                          trigger={<Button content='Food Availability:' />}
-                          content='1 star: no nearby food 5 star: food in building'
-                        />
-                      </div>
-                      <Rating
-                        className="ui star"
-                        defaultRating={3}
-                        maxRating={5}
-                        onRate={this.handleRating3}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+							<div className="ui grid">
+								<div className="eight wide column">
+									<div className="ui items">
+										<div className="ui item">
+											<div className="middle aligned content">
+												<div className="header">
+													<Popup
+														trigger={<Button content='Food Availability:' />}
+														content='1 star: no nearby food 5 star: food in building'
+													/>
+												</div>
+												<Rating
+													className="ui star"
+													defaultRating={3}
+													maxRating={5}
+													onRate={this.handleRating3}
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
 
-              <div className="eight wide column">
-                <div className="ui items">
-                  <div className="ui item">
-                    <div className="middle aligned content">
-                      <div className="header">
-                        <Popup
-                          trigger={<Button content='Open Late:' />}
-                          content='1 star: closes 3pm or earlier 5 star: open 12pm or later'
-                        />
-                      </div>
-                      <Rating
-                        className="ui star"
-                        defaultRating={3}
-                        maxRating={5}
-                        onRate={this.handleRating4}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+								<div className="eight wide column">
+									<div className="ui items">
+										<div className="ui item">
+											<div className="middle aligned content">
+												<div className="header">
+													<Popup
+														trigger={<Button content='Open Late:' />}
+														content='1 star: closes 3pm or earlier 5 star: open 12pm or later'
+													/>
+												</div>
+												<Rating
+													className="ui star"
+													defaultRating={3}
+													maxRating={5}
+													onRate={this.handleRating4}
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-        <Form>
-          <label>Enter your review below (500 char limit)</label>
-          <TextArea
-            placeholder="This place is good/bad because..."
-            rows={5}
-            onChange={this.handleFormChange}
-            maxLength={500}
-          />
-        </Form>
+					<Form>
+						<label>Enter your review below (500 char limit)</label>
+						<TextArea
+							placeholder="This place is good/bad because..."
+							rows={5}
+							onChange={this.handleFormChange}
+							maxLength={500}
+						/>
+					</Form>
+				</div>
 
-      </div>
-        <Button
-          className="blue"
-          onClick={this.submitReview}
-        >Submit</Button>
-
-      </div>
-    )
-  }
+				<Link to={{
+					pathname: "/location",
+					state: {
+						location: this.state.location,
+						address: this.state.address
+					}
+				}} >
+					<Button
+						className="blue"
+						onClick={this.submitReview}>
+						Submit
+					</Button>
+				</Link>
+			</div>
+		)
+	}
 }
 
 export default Review

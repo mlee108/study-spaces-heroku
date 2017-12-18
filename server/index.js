@@ -9,24 +9,6 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-// const CORSPORT = process.env.PORT || 8081;
-// const HOST = process.env.HOST || '0.0.0.0';
-//
-// cors_proxy.createServer({
-//   originWhitelist: [],
-//   requireHeader: ['origin', 'x-requested-with'],
-//   removeHeaders: ['cookie', 'cookie2']
-// }).listen(CORSPORT, HOST, function() {
-//   console.log('Running CORS anywhere on' + HOST + ': ' + CORSPORT);
-// })
-
-// Allow CORS so that backend and frontend could be put on different servers
-// var allowCrossDomain = function (req, res, next) {
-// 	res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// };
-// app.use(allowCrossDomain);
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -51,11 +33,6 @@ app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 // Answer API requests.
 app.use('/api', require('./routes/api.js')(router, passport));
-
-// function (req, res) {
-//   res.set('Content-Type', 'application/json');
-//   res.send('{"message":"Hello from the custom server!"}');
-// });
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', function(request, response) {

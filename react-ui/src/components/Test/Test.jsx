@@ -23,7 +23,6 @@ import axios from 'axios'
 import './Test.css';
 import knifeforkImg from '../../assets/knifefork.png'
 
-
 class Test extends Component {
   constructor(props){
     super(props);
@@ -61,7 +60,7 @@ class Test extends Component {
     console.log("updated search...");
     console.log(newSearch);
 
-    var corsUrl = 'http://localhost:8081/';
+    var corsUrl = 'https://cors-anywhere.herokuapp.com/';
     let googleapi = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
     let apikey = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
 
@@ -136,22 +135,22 @@ class Test extends Component {
           size='massive'
           onChange={this.handleSearch}
         />
-          <br/>
-          <br/>
-          <Button
-            color="grey"
-            className="ui home-submit-btn"
-            onClick={this.submitSearch}
-          >
-              Submit
-          </Button>
-          <br/>
-          <Header size='medium' color='teal' >Results</Header>
-          <br/>
-          <span>whitespace</span>
-          <Grid centered className="placeList" relaxed columns={4}>
-            <Grid.Row>
-                {results}
+				<br/>
+				<br/>
+				<Button
+					color="grey"
+					className="ui home-submit-btn"
+					onClick={this.submitSearch}
+				>
+					Submit
+				</Button>
+				<br/>
+				<Header size='medium' color='teal' >Results</Header>
+				<br/>
+				<span>whitespace</span>
+				<Grid centered className="placeList" relaxed columns={4}>
+					<Grid.Row>
+						{results}
           </Grid.Row>
         </Grid>
       </div>

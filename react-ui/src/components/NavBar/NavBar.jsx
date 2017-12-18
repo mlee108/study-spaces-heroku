@@ -91,7 +91,6 @@ class NavBar extends Component {
             </div>
           </Link>
           <div className="right menu">
-						{this.displaySearchInput()}
             {this.displayLinks()}
           </div>
         </div>
