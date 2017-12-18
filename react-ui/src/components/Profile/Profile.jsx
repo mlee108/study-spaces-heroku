@@ -3,7 +3,7 @@ import { Header, Image, Card, Icon, Table, Rating, Dropdown, List } from 'semant
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
-import styles from './Profile.scss';
+import styles from './Profile.css';
 
 class Profile extends Component {
   constructor(props){

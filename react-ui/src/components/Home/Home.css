@@ -1,0 +1,16 @@
+/*body {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}*/
+.home-submit-btn {
+  padding: 1em;
+}
+.home-form {
+  padding: 1em;
+}
+.home-text {
+  text-align: center;
+}

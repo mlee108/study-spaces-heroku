@@ -3,7 +3,7 @@ import { Button, Input, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import styles from './Signup.scss';
+import styles from './Signup.css';
 
 class Signup extends Component {
 

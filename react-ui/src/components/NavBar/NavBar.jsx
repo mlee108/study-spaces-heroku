@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import axios from 'axios';
 import whaleImg from '../../../public/whale.png'
 
-import styles from './NavBar.scss';
+import './NavBar.css';
 
 class NavBar extends Component {
   constructor(props){

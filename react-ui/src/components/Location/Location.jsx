@@ -13,7 +13,7 @@ import {
  } from 'semantic-ui-react';
 
 import axios from 'axios';
-import styles from './Location.scss';
+import './Location.css';
 
 class Location extends Component {
   constructor(props) {

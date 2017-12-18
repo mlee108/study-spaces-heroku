@@ -10,9 +10,9 @@ import {
  }
 from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import styles from './Home.scss';
 import NavBar from '../NavBar/NavBar.jsx';
 import axios from 'axios';
+import './Home.css';
 
 class Home extends Component {
   constructor(props){

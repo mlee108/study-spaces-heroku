@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header, Search, Grid, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
-import styles from './ListView.scss';
+import './ListView.css';
 
 const numbers = [1, 2, 3, 4];
 

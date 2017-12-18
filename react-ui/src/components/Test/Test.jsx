@@ -17,10 +17,10 @@ import {
  }
 from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import styles from './Test.scss';
 import NavBar from '../NavBar/NavBar.jsx';
 import PropTypes from 'prop-types';
 import axios from 'axios'
+import './Test.css';
 
 
 class Test extends Component {
