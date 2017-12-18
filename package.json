@@ -15,8 +15,6 @@
     "body-parser": "1.18.2",
     "cookie-parser": "1.4.3",
     "cookie-session": "2.0.0-beta.3",
-    "cors": "2.8.4",
-    "cors-anywhere": "0.4.1",
     "express": "^4.14.1",
     "mongoose": "4.13.7",
     "passport": "0.4.0",

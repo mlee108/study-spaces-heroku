@@ -6,7 +6,6 @@ const config = require('../config');
 const router = express.Router();
 const cookieSession = require('cookie-session');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -28,8 +27,6 @@ const PORT = process.env.PORT || 5000;
 //   next();
 // };
 // app.use(allowCrossDomain);
-
-app.use(cors());
 
 app.use(bodyParser.urlencoded({
   extended: true
