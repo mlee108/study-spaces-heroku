@@ -6,7 +6,7 @@ const config = require('../config');
 const router = express.Router();
 const cookieSession = require('cookie-session');
 const cookieParser = require('cookie-parser');
-var cors_proxy = require('cors-anywhere');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,12 +22,14 @@ const PORT = process.env.PORT || 5000;
 // })
 
 // Allow CORS so that backend and frontend could be put on different servers
-var allowCrossDomain = function (req, res, next) {
-	res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-};
-app.use(allowCrossDomain);
+// var allowCrossDomain = function (req, res, next) {
+// 	res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// };
+// app.use(allowCrossDomain);
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
   extended: true

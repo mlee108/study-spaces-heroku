@@ -53,7 +53,7 @@ class Home extends Component {
     let apikey = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
 
     var newApiCall = /*corsUrl + */googleapi + newSearch + apikey;
-    axios.get(newApiCall, { crossdomain: true }).then((response) => {
+    axios.get(newApiCall).then((response) => {
       console.log(response.data)
       console.log(response.data.results)
       console.log(response.data.results[0].name)
