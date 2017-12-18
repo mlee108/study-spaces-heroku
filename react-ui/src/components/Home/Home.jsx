@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar.jsx';
 import axios from 'axios';
 import './Home.css';
+import knifeforkImg from '../../assets/knifefork.png'
 
 class Home extends Component {
   constructor(props){
@@ -71,7 +72,7 @@ class Home extends Component {
 			// let photourl = '';
       // if (place.photos == undefined) {
       //   //console.log(place.name + " is undefined");
-      //   photourl = '.../../assets/knifefork.png';
+      //   photourl = knifeforkImg;
       // }
       // else {
       //   let googlephoto = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=';
@@ -82,7 +83,7 @@ class Home extends Component {
 			return (
 				<Grid.Column key={place.id}>
 					<Card>
-						<Image centered size="medium" value={place.id} key={place.id} src=".../../assets/knifefork.png" />
+						<Image centered size="medium" value={place.id} key={place.id} src={knifeforkImg} />
 						<Card.Content>
 							<Card.Header>
 								<Link

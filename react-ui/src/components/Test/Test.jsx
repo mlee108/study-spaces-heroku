@@ -21,6 +21,7 @@ import NavBar from '../NavBar/NavBar.jsx';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import './Test.css';
+import knifeforkImg from '../../assets/knifefork.png'
 
 
 class Test extends Component {
@@ -87,7 +88,7 @@ class Test extends Component {
   /*      let photourl = '';
         if (place.photos == undefined) {
           //console.log(place.name + " is undefined");
-          photourl = '.../../assets/knifefork.png';
+          photourl = '../../assets/knifefork.png';
         }
         else {
           let googlephoto = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=';
@@ -98,7 +99,7 @@ class Test extends Component {
         return (
          <Grid.Column key={place.id}>
            <Card>
-             <Image centered size="medium" value={place.id} key={place.id} src=".../../assets/knifefork.png" />
+             <Image centered size="medium" value={place.id} key={place.id} src={knifeforkImg} />
              <Card.Content>
                <Card.Header>
                  <Link

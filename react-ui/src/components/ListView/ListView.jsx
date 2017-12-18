@@ -3,6 +3,7 @@ import { Header, Search, Grid, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import './ListView.css';
+import knifeforkImg from '../../assets/knifefork.png'
 
 const numbers = [1, 2, 3, 4];
 
@@ -12,16 +13,16 @@ class ListView extends Component {
         return (
           <Grid.Row container columns={4}>
             <Grid.Column>
-              <Image src='.../../assets/knifefork.png' />
+              <Image src={knifeforkImg} />
             </Grid.Column>
             <Grid.Column>
-              <Image src='.../../assets/knifefork.png' />
+              <Image src={knifeforkImg} />
             </Grid.Column>
             <Grid.Column>
-              <Image src='.../../assets/knifefork.png' />
+              <Image src={knifeforkImg} />
             </Grid.Column>
             <Grid.Column>
-              <Image src='.../../assets/knifefork.png' />
+              <Image src={knifeforkImg} />
             </Grid.Column>
           </Grid.Row>
         )

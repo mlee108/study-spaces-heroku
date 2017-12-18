@@ -3,7 +3,19 @@ import { Header, Image, Card, Icon, Table, Rating, Dropdown, List } from 'semant
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
-import styles from './Profile.css';
+import './Profile.css';
+
+import img0 from '../../assets/0.png';
+import img1 from '../../assets/1.png';
+import img2 from '../../assets/2.png';
+import img3 from '../../assets/3.png';
+import img4 from '../../assets/4.png';
+import img5 from '../../assets/5.png';
+import img6 from '../../assets/6.png';
+import img7 from '../../assets/7.png';
+import img8 from '../../assets/8.png';
+import img9 from '../../assets/9.png';
+let images = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 class Profile extends Component {
   constructor(props){
@@ -29,10 +41,10 @@ class Profile extends Component {
       .then ( (res) => {
         let firstChar = this.state.email.charAt(0);
         let charVal = (firstChar.charCodeAt(0)-96) % 10;
-        let profileIcon = ".../../assets/" + charVal.toString() + ".png";
+        // let profileIcon = profileImg;//url("../../assets/" + charVal.toString() + ".png");
         apiCall = '/api/review?where={"email": "' + this.state.email + '"}';
         this.setState({
-          icon: profileIcon
+          icon: images[charVal] //profileIcon
         })
       })
       .then ( (res) => {
