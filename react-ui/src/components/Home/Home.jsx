@@ -48,11 +48,11 @@ class Home extends Component {
     console.log("updated search:");
     console.log(newSearch);
 
-    var corsUrl = 'http://localhost:8081/';
+    // var corsUrl = 'http://localhost:8081/';
     let googleapi = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
     let apikey = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
 
-    var newApiCall = corsUrl + googleapi + newSearch + apikey;
+    var newApiCall = /*corsUrl + */googleapi + newSearch + apikey;
     axios.get(newApiCall).then((response) => {
       console.log(response.data)
       console.log(response.data.results)
