@@ -48,7 +48,7 @@ class Home extends Component {
     console.log("updated search:");
     console.log(newSearch);
 
-    var corsUrl = 'https://cors-anywhere.herokuapp.com';
+    var corsUrl = 'https://cors-anywhere.herokuapp.com/';
     let googleapi = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
     let apikey = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
 
