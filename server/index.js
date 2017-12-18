@@ -10,16 +10,16 @@ var cors_proxy = require('cors-anywhere');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const CORSPORT = process.env.PORT || 8081;
-const HOST = process.env.HOST || '0.0.0.0';
-
-cors_proxy.createServer({
-  originWhitelist: [],
-  requireHeader: ['origin', 'x-requested-with'],
-  removeHeaders: ['cookie', 'cookie2']
-}).listen(CORSPORT, HOST, function() {
-  console.log('Running CORS anywhere on' + HOST + ': ' + CORSPORT);
-})
+// const CORSPORT = process.env.PORT || 8081;
+// const HOST = process.env.HOST || '0.0.0.0';
+//
+// cors_proxy.createServer({
+//   originWhitelist: [],
+//   requireHeader: ['origin', 'x-requested-with'],
+//   removeHeaders: ['cookie', 'cookie2']
+// }).listen(CORSPORT, HOST, function() {
+//   console.log('Running CORS anywhere on' + HOST + ': ' + CORSPORT);
+// })
 
 app.use(bodyParser.urlencoded({
   extended: true
