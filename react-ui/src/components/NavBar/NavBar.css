@@ -6,6 +6,6 @@
 	display: flex; /*forces the two links to be displayed horizontally*/
 }
 
-#link-container#logOutButton {
+#logOutButton {
 	cursor: pointer;
 }

@@ -17,7 +17,6 @@ import {
  }
 from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import NavBar from '../NavBar/NavBar.jsx';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import './Test.css';
@@ -128,7 +127,6 @@ class Test extends Component {
       });
     return (
       <div className="Test">
-        <NavBar/>
         <h1>Test Component</h1>
         <Input
           placeholder='i.e. Cafes in Champaign'

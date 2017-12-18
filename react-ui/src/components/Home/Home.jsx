@@ -14,7 +14,6 @@ from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import NavBar from '../NavBar/NavBar.jsx';
 import './Home.css';
 import knifeforkImg from '../../assets/knifefork.png'
 import locationIcon from '../../assets/locationIcon.png'
