@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+require('./models').connect(config.dbUri);
+require('./auth/passport')(passport);
+
 // Initialize cookie sessions
 app.use(cookieParser());
 app.use(cookieSession({
@@ -30,7 +33,7 @@ app.use(passport.session());
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 // Answer API requests.
-app.use('/api', require('./routes/api')(router, passport));
+app.use('/api', require('./routes/api.js')(router, passport));
 
 // function (req, res) {
 //   res.set('Content-Type', 'application/json');
