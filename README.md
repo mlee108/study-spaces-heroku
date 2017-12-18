@@ -1,3 +1,66 @@
+# StudySpace
+Best places to study on UIUC campus
+
+#12/18
+### Completed
+- finally deployed on Heroku!
+
+# 12/11
+### Completed
+- added cors-anywhere for Google API: Ivy
+
+# 12/10
+### Completed
+- Login/Signup both work w/ the UI: Michelle
+
+# 12/8
+### Completed
+- Saving states in Home and Review Components: Ivy
+- Profile Structure: Jasmine
+
+### To do
+- Implement API: Michelle
+
+###In Progress
+- Gallery Structure: Jasmine
+
+# 12/6
+### Completed
+- Login User auth: Alicia
+
+### To do
+- Profile, Gallery Structure: Jasmine
+
+# 12/4
+### Completed
+- Home, Review structure: Ivy
+- Login, Signup, Location structure: Kirsten
+- Nav Bar structure: Ivy
+
+### To do
+- API functionality: Michelle
+- Incorporate User auth with login/signup: Alicia
+
+# 12/1 - 12/3
+### Completed
+- Functional Prototype / Storyboard: everyone
+- User Authentication: Alicia
+- Environment setup (package.json, gitignore): Ivy
+- Database Models (User, Reviews): Alicia, Ivy
+
+### To do
+- Front End components: Jasmine(?), Kirsten(?), Michelle(?)
+- Look into Google or other API: Michelle (?)
+
+# 11/13
+### User authentication
+- Refer to Passport in Node.js
+- responsible: Alicia, Michelle, Ivy
+### Overall Structure / Layout of the Website
+- Workflow, Storyboard
+- responsible: Kirsten, Jasmine
+
+
 # create-react-app with a Node server on Heroku
 
 A minimal example of using a Node backend (server for API, proxy, & routing) with a [React frontend](https://github.com/facebookincubator/create-react-app).
@@ -53,7 +116,7 @@ This deployment will automatically:
 If an app was previously deployed with [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack), then a few steps are required to migrate the app to this architecture:
 
 1. Remove **create-react-app-buildpack** from the app; [heroku/nodejs buildpack](https://devcenter.heroku.com/articles/nodejs-support#activation) will be automatically activated
-  
+
     ```bash
     heroku buildpacks:clear
     ```
@@ -67,13 +130,13 @@ If an app was previously deployed with [create-react-app-buildpack](https://gith
     ```
 1. Create a root [`package.json`](package.json), [`server/`](server/), & [`.gitignore`](.gitignore) modeled after the code in this repo
 1. Commit and deploy ♻️
-  
+
     ```bash
     git add -A
     git commit -m 'Migrate from create-react-app-buildpack to Node server'
     git push heroku master
     ```
-  
+
 
 ## Local Development
 

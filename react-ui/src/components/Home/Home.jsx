@@ -72,20 +72,20 @@ class Home extends Component {
 
   render() {
 		var results = this.state.places.slice(0,20).map((place) => {
-			// let photourl = '';
-      // if (place.photos == undefined) {
-      //   //console.log(place.name + " is undefined");
-      //   photourl = knifeforkImg;
-      // }
-      // else {
-      //   let googlephoto = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=';
-      //   let key = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
-      //   photourl = googlephoto + place.photos[0].photo_reference + key;
-      // }
+			let photourl = '';
+      if (place.photos == undefined) {
+        //console.log(place.name + " is undefined");
+        photourl = locationIcon;
+      }
+      else {
+        let googlephoto = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=';
+        let key = '&key=AIzaSyBDRH-amNMHWJgOXGFuASOFP7x7EOihKF0';
+        photourl = googlephoto + place.photos[0].photo_reference + key;
+      }
 
 			return (
 				<List.Item>
-					<Image size="small" src={locationIcon} />
+					<Image size="small" src={photourl} />
 					<List.Content>
 						<List.Description></List.Description>
 						<List.Header>
@@ -113,20 +113,16 @@ class Home extends Component {
 			<div className="home-text">
 				<h1 id="header">StudySpaces</h1>
 				<h5>Looking for a place to do work? Find one here, and leave a review!</h5>
-				<Input
-					placeholder='i.e. Cafes in Champaign'
-					size='massive'
-					onChange={this.handleSearch}
-				/>
-				<br/>
-				<br/>
-				<Button
-					color="grey"
-					className="ui home-submit-btn"
-					onClick={this.submitSearch}
-				>
-					Submit
-				</Button>
+				<form action="javascript:void(0);" onSubmit={this.submitSearch}>
+					<Input
+						placeholder='i.e. Cafes in Champaign'
+						size='massive'
+						onChange={this.handleSearch}
+					/>
+					<br/>
+					<br/>
+					<Input type="submit" className="ui home-submit-btn"/>
+				</form>
 				<br/>
 				<br/>
 				<List relaxed celled verticalAlign="middle">
